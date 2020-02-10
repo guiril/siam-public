@@ -119,8 +119,7 @@
     });
     $('#modalSignup').on('shown.bs.modal', function () {
       $('#signupUsername').focus();
-    }); // $('#modalUsername').modal('show') // 打開 Create Name Modal
-
+    });
     $('[data-toggle="popover"]').popover(); // popover
 
     $('[data-toggle="tooltip"]').tooltip({
@@ -289,6 +288,23 @@
       }
     });
   });
+
+  if (getEl('#name') || getEl('#tel')) {
+    var fullName = getEl('#name');
+    var mobileNumber = getEl('#tel');
+
+    if (fullName.value) {
+      fullName.disabled = true;
+    } else {
+      fullName.disabled = false;
+    }
+
+    if (mobileNumber.value) {
+      mobileNumber.disabled = true;
+    } else {
+      mobileNumber.disabled = false;
+    }
+  }
 
   if (getEl('#modalSignup')) {
     // 註冊表單驗證訊息
@@ -462,56 +478,10 @@
     }, false);
   }
 
-  if (getEl('#modalUsername')) {
-    // Create Name 驗證
-    var _username = getEl('#username');
-
-    var submitBtn = getEl('#usernameBtn');
-
-    var _validateUsername = function _validateUsername() {
-      var str = _username.value;
-      var strLength = str.length;
-      var specialSymbolsRegex = /^[a-zA-Z0-9]*$/;
-      var feedbackWrap = _username.nextElementSibling;
-      var icon = '';
-      var msg = '';
-
-      if (str) {
-        if (!specialSymbolsRegex.test(str)) {
-          // 只能有英文和數字
-          _username.className = 'is-invalid';
-          msg = 'Username cannot use special symbols.';
-          icon = 'icon_error.svg';
-          submitBtn.disabled = true;
-        } else if (strLength < 6) {
-          // 字數至少六個字
-          _username.className = 'is-invalid';
-          msg = 'Username is less than 6 characters.';
-          icon = 'icon_error.svg';
-          submitBtn.disabled = true;
-        } else {
-          _username.className = 'is-valid';
-          msg = 'This uesrname can be used.';
-          icon = 'icon_correct.svg';
-          submitBtn.disabled = false;
-        }
-      } else {
-        _username.className = '';
-        msg = '';
-        icon = '';
-        submitBtn.disabled = true;
-      }
-
-      feedbackWrap.innerHTML = "<img src=\"images/common/".concat(icon, "\"><span class=\"feedback-msg\">").concat(msg, "</span>");
-    };
-
-    _username.addEventListener('keyup', _validateUsername, false);
-  }
-
-  if (getEl('.pws-btn')) {
+  if (getEl('.psw-btn')) {
     (function () {
       // 顯示或隱藏密碼
-      var icon = getAllEl('.pws-btn');
+      var icon = getAllEl('.psw-btn');
       var hideIcon = '<img src="images/common/icon_psw_hide.svg" alt="Hide password">';
       var showIcon = '<img src="images/common/icon_psw_show.svg" alt="Show password">';
 
@@ -713,6 +683,7 @@
 
       if (totalPage > 0) {
         paginationList.innerHTML = "\n        <li><a class=\"page-first\" href=\"#\" data-page=\"1\">First</a></li>\n        <li><a class=\"page-prev\" href=\"#\" data-page=\"prev\">Previous</a></li>\n        ".concat(pageString, "\n        <li><a class=\"page-next\" href=\"#\" data-page=\"next\">Next</a></li>\n        <li><a class=\"page-last\" href=\"#\" data-page=\"").concat(totalPage, "\">Last</a></li>");
+        getEl('.pagination-list').style.display = 'flex';
 
         if (page === 1 && page !== totalPage) {
           getEl('.page-first').classList.add('disabled');

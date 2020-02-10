@@ -147,8 +147,8 @@
           <div class="container">
             <ul class="navbar-list">
               <li><a href="index.html">Home</a></li>
-              <li><a href="live-casino.html">Live Casino
-                  <!-- sub-navbar --></a>
+              <li><a href="live-casino.html">Live Casino</a>
+                <!-- sub-navbar -->
                 <div class="sub-navbar-container">
                   <ul class="sub-navbar-list container">
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/live-casino/sa.png" alt="SA Casino"/><span class="subnav-name">SA Casino</span></a></li>
@@ -169,8 +169,8 @@
                 <div class="sub-navbar-container">
                   <ul class="sub-navbar-list container flex-center">
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/sports/sbobet.png" alt="SBOBET"/><span class="subnav-name">SBOBET</span></a></li>
-                    <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/sports/onebook.png" alt="Onebook"/><span class="subnav-name">Onebook</span></a></li>
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/sports/cmd368.png" alt="CMD368"/><span class="subnav-name">CMD368</span></a></li>
+                    <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/sports/onebook.png" alt="Onebook"/><span class="subnav-name">Onebook</span></a></li>
                   </ul>
                 </div>
                 <!-- sub-navbar -->
@@ -185,7 +185,7 @@
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/dt.png" alt="Dreamtech"/><span class="subnav-name">Dreamtech</span></a></li>
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/ygg.png" alt="YGGDRASIL"/><span class="subnav-name">YGGDRASIL</span></a></li>
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/bng.png" alt="Booongo"/><span class="subnav-name">Booongo</span></a></li>
-                    <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/png.png" alt="Play’n GO"/><span class="subnav-name">Play’n GO</span></a></li>
+                    <!-- <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/png.png" alt="Play’n GO"/><span class="subnav-name">Play’n GO</span></a></li>-->
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/cq9.png" alt="CQ9 Gaming"/><span class="subnav-name">CQ9 Gaming</span></a></li>
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/betsoft.png" alt="BETSOFT"/><span class="subnav-name">BETSOFT</span></a></li>
                     <li><a href="javascript:void(0)"><img class="subnav-img" src="images/navbar/slots/microgaming.png" alt="Microgaming"/><span class="subnav-name">Microgaming</span></a></li>
@@ -482,8 +482,7 @@
                 <input id="signupUsername" type="text" placeholder="Username" minlength="6" maxlength="12" required="required"/>
                 <div class="form-feedback"></div>
               </div>
-              <div class="form-group required" data-container="body" data-toggle="popover" data-placement="right" data-trigger="focus" data-content="Passwords must include lowercase, uppercase and numeric, 6 to 12 characters.">
-                <button class="pws-btn" tabindex="-1" title="Show password" data-toggle="tooltip" data-placement="right"><img src="images/common/icon_psw_hide.svg" alt="Hide password"/></button>
+              <div class="form-group required" data-container="body" data-toggle="popover" data-placement="right" data-trigger="focus" data-content="Passwords must include lowercase, uppercase and numeric, 6 to 12 characters."><span class="psw-btn" title="Show password" data-toggle="tooltip" data-placement="right"><img src="images/common/icon_psw_hide.svg" alt="Hide password"/></span>
                 <label for="signupPassword"><img src="images/common/icon_password.svg" alt="Password" title="Password"/></label>
                 <input id="signupPassword" type="password" placeholder="Password" minlength="6" maxlength="12" required="required"/>
                 <div class="form-feedback"></div>
@@ -542,8 +541,7 @@
                 <!-- 錯誤 <input class="is-invalid mb-0" id="signinUsername" type="text" placeholder="Username"> -->
                 <!-- 正確 <input class="is-valid mb-0" id="signinUsername" type="text" placeholder="Username"> -->
               </div>
-              <div class="form-group">
-                <button class="pws-btn" tabindex="-1" title="Show password" data-toggle="tooltip" data-placement="right"><img src="images/common/icon_psw_hide.svg" alt="Hide password"/></button>
+              <div class="form-group"><span class="psw-btn" title="Show password" data-toggle="tooltip" data-placement="right"><img src="images/common/icon_psw_hide.svg" alt="Hide password"/></span>
                 <label for="signinPassword"><img src="images/common/icon_password.svg" alt="Password" title="Password"/></label>
                 <input id="signinPassword" type="password" placeholder="Password" minlength="6" maxlength="12" required="required"/>
                 <!-- 錯誤 <input class="is-invalid" id="signinPassword" type="password" placeholder="Password"> -->
@@ -572,33 +570,6 @@
       </div>
     </div>
     <!-- signin modal end -->
-    <!-- create name modal start -->
-    <div class="member-modal modal fade" id="modalUsername" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img src="images/common/close_w.svg" alt="close icon"/></button>
-            <div class="modal-title">
-              <h2>Create Name</h2>
-            </div>
-            <div class="modal-description">
-              <p>Get a name for your account and win money at Siam28.</p>
-            </div>
-          </div>
-          <div class="modal-body">
-            <form class="modal-form-wrapper" action="#" autocomplete="off">
-              <div class="form-group">
-                <label for="username"><img src="images/common/icon_username.svg" alt="Username" title="Username"/></label>
-                <input id="username" type="text" placeholder="Username" minlength="6" maxlength="12" required="required"/>
-                <div class="form-feedback"></div>
-              </div>
-              <button class="submit-btn" id="usernameBtn" type="button" data-dismiss="modal" disabled="disabled">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- create name modal end -->
     <!-- pc download modal -->
     <div class="download-modal modal fade" id="modalDownloadPc" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-dialog-centered" role="document">

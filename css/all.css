@@ -973,6 +973,16 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden; }
+  .wrapper-bg {
+    width: 100vw;
+    max-width: 1920px;
+    min-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../images/common/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 1920px;
+    background-position: center top; }
 
 .container {
   width: 1280px;
@@ -2524,7 +2534,6 @@ body {
       -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
               box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
       border: solid 1px rgba(253, 225, 116, 0.6);
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
       -webkit-transition: margin-bottom .5s;
       transition: margin-bottom .5s; }
       .modal-form-wrapper .form-group input::-webkit-input-placeholder {
@@ -2561,22 +2570,23 @@ body {
       .modal-form-wrapper .form-group label img {
         width: 32px;
         height: 32px; }
-    .modal-form-wrapper .form-group .pws-btn {
+    .modal-form-wrapper .form-group .psw-btn {
       position: absolute;
       top: 11px;
       right: 17px;
-      padding: 5px; }
-      .modal-form-wrapper .form-group .pws-btn img {
+      padding: 5px;
+      cursor: pointer; }
+      .modal-form-wrapper .form-group .psw-btn img {
         display: block;
         width: 21px;
         -webkit-transition: -webkit-transform .2s;
         transition: -webkit-transform .2s;
         transition: transform .2s;
         transition: transform .2s, -webkit-transform .2s; }
-      .modal-form-wrapper .form-group .pws-btn:hover img {
+      .modal-form-wrapper .form-group .psw-btn:hover img {
         -webkit-transform: scale(1.08);
                 transform: scale(1.08); }
-      .modal-form-wrapper .form-group .pws-btn ~ input {
+      .modal-form-wrapper .form-group .psw-btn ~ input {
         padding-right: 63px; }
   .modal-form-wrapper .form-feedback {
     display: none;
@@ -2669,7 +2679,7 @@ body {
             align-items: center;
     margin-bottom: 15px; }
     .member-form-wrapper .form-group .col-1 {
-      width: 125px;
+      width: 145px;
       text-align: right; }
       .member-form-wrapper .form-group .col-1 label {
         font-size: 14px;
@@ -2681,15 +2691,16 @@ body {
       width: 412px;
       margin-left: 28px;
       font-size: 0; }
-      .member-form-wrapper .form-group .col-2 .pws-btn {
+      .member-form-wrapper .form-group .col-2 .psw-btn {
         position: absolute;
         top: 7px;
         right: 13px;
-        padding: 5px; }
-        .member-form-wrapper .form-group .col-2 .pws-btn img {
+        padding: 5px;
+        cursor: pointer; }
+        .member-form-wrapper .form-group .col-2 .psw-btn img {
           display: block;
           width: 16px; }
-        .member-form-wrapper .form-group .col-2 .pws-btn ~ input {
+        .member-form-wrapper .form-group .col-2 .psw-btn ~ input {
           padding-right: 40px; }
       .member-form-wrapper .form-group .col-2 .currency-icon {
         display: block;
@@ -2756,6 +2767,8 @@ body {
       padding-top: 0;
       padding-bottom: 0;
       text-indent: 6px; }
+      .member-form-wrapper .input-type.select-type option {
+        background-color: #070310; }
     .member-form-wrapper .input-type.current-date {
       display: inline-block;
       width: 236px;
@@ -2846,11 +2859,72 @@ body {
         background-color: rgba(49, 9, 107, 0.5);
         border-color: transparent; }
   .member-form-wrapper .form-text {
-    margin: 21px 0 20px 153px;
+    margin: 21px 0 20px 173px;
     font-size: 14px;
     font-family: "Catamaran";
     font-weight: 500;
     color: rgba(248, 248, 248, 0.9); }
+  .member-form-wrapper .bound-account {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .member-form-wrapper .bound-account li {
+      position: relative;
+      width: 201px;
+      padding-top: 7px;
+      padding-bottom: 5px;
+      margin-right: 10px;
+      border-radius: 6px;
+      -webkit-transition: all .2s;
+      transition: all .2s; }
+      .member-form-wrapper .bound-account li:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 46px;
+        width: 1px;
+        height: 34px; }
+      .member-form-wrapper .bound-account li.bound-account-line {
+        background-color: #00c300; }
+        .member-form-wrapper .bound-account li.bound-account-line:after {
+          background-color: #00b300; }
+        .member-form-wrapper .bound-account li.bound-account-line:hover {
+          background-color: #00e000; }
+        .member-form-wrapper .bound-account li.bound-account-line:active {
+          background-color: #00a300; }
+      .member-form-wrapper .bound-account li.bound-account-facebook {
+        margin-right: 0;
+        background-color: #25479b; }
+        .member-form-wrapper .bound-account li.bound-account-facebook:after {
+          background-color: #1b3c8f; }
+        .member-form-wrapper .bound-account li.bound-account-facebook:hover {
+          background-color: #284fb0; }
+        .member-form-wrapper .bound-account li.bound-account-facebook:active {
+          background-color: #153481; }
+      .member-form-wrapper .bound-account li .bound-account-container {
+        display: block;
+        font-size: 14px;
+        font-family: "Catamaran";
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.2px;
+        color: #f8f8f8; }
+      .member-form-wrapper .bound-account li .bound-account-img {
+        width: 46px;
+        display: inline-block;
+        text-align: center; }
+        .member-form-wrapper .bound-account li .bound-account-img img {
+          display: inline-block;
+          vertical-align: middle; }
+      .member-form-wrapper .bound-account li .bound-account-txt {
+        padding-left: 16px; }
   .member-form-wrapper .search-btn {
     min-width: 80px;
     height: 34px;
@@ -2869,7 +2943,7 @@ body {
     min-width: 150px;
     height: 40px;
     margin-top: 15px;
-    margin-left: 153px;
+    margin-left: 173px;
     font-size: 16px;
     font-family: "Helvetica Bold";
     font-weight: bold;

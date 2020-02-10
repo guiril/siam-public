@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Siam28</title>
+    <link rel="icon" type="image/png" href="images/common/favicon.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;display=swap"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+  </head>
+  <body>
+    <div class="wrapper-bg"></div>
+    <!-- create name modal start -->
+    <div class="member-modal modal fade" id="modalUsername" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img src="images/common/close_w.svg" alt="close icon"/></button>
+            <div class="modal-title">
+              <h2>Create Name</h2>
+            </div>
+            <div class="modal-description">
+              <p>Get a name for your account and win money at Siam28.</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form-wrapper" action="#" autocomplete="off">
+              <div class="form-group">
+                <label for="username"><img src="images/common/icon_username.svg" alt="Username" title="Username"/></label>
+                <input id="username" type="text" placeholder="Username" minlength="6" maxlength="12" required="required"/>
+                <div class="form-feedback"></div>
+              </div>
+              <button class="submit-btn" id="usernameBtn" type="button" data-dismiss="modal" disabled="disabled">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- create name modal end -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/username.js"></script>
+  </body>
+</html>
