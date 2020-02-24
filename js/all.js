@@ -9,28 +9,32 @@
     return document.querySelectorAll(el);
   };
 
-  var animated = function animated(el, className, delay) {
+  var animated = function animated(el, className) {
     var item = getAllEl(el);
     var windowHeight = document.documentElement.clientHeight;
     var windowPos = window.pageYOffset;
-    item.forEach(function (el) {
-      var thisPos = el.offsetTop;
+
+    for (var i = 0; i < item.length; i++) {
+      var thisPos = item[i].offsetTop;
 
       if (thisPos >= windowPos && thisPos <= windowPos + windowHeight) {
-        el.style.visibility = 'visible';
-        el.classList.add(className);
+        item[i].style.visibility = 'visible';
+        item[i].classList.add(className);
       }
-    });
-    window.addEventListener('scroll', function () {
-      var scrollY = window.scrollY;
-      item.forEach(function (el) {
-        var thisPos = el.offsetTop;
+    }
 
-        if (thisPos >= scrollY && thisPos <= scrollY + windowHeight) {
-          el.style.visibility = 'visible';
-          el.classList.add(className);
+    window.addEventListener('scroll', function () {
+      var scrollY = window.pageYOffset;
+
+      for (var _i = 0; _i < item.length; _i++) {
+        var _thisPos = item[_i].offsetTop;
+
+        if (_thisPos >= scrollY && _thisPos <= scrollY + windowHeight) {
+          item[_i].style.visibility = 'visible';
+
+          item[_i].classList.add(className);
         }
-      });
+      }
     }, false);
   };
 
@@ -42,24 +46,33 @@
     var thisPos = itemWrapper.offsetTop;
 
     if (thisPos >= windowPos && thisPos <= windowPos + windowHeight) {
-      item.forEach(function (el, index) {
+      var _loop = function _loop(i) {
         setTimeout(function () {
-          el.style.visibility = 'visible';
-          el.classList.add(className);
-        }, 800 * index);
-      });
+          item[i].style.visibility = 'visible';
+          item[i].classList.add(className);
+        }, 800 * i);
+      };
+
+      for (var i = 0; i < item.length; i++) {
+        _loop(i);
+      }
     }
 
     window.addEventListener('scroll', function () {
       var scrollY = window.scrollY;
 
       if (thisPos >= scrollY && thisPos <= scrollY + windowHeight) {
-        item.forEach(function (el, index) {
+        var _loop2 = function _loop2(_i2) {
           setTimeout(function () {
-            el.style.visibility = 'visible';
-            el.classList.add(className);
-          }, 800 * index);
-        });
+            item[_i2].style.visibility = 'visible';
+
+            item[_i2].classList.add(className);
+          }, 800 * _i2);
+        };
+
+        for (var _i2 = 0; _i2 < item.length; _i2++) {
+          _loop2(_i2);
+        }
       }
     }, false);
   };
@@ -485,7 +498,7 @@
       var hideIcon = '<img src="images/common/icon_psw_hide.svg" alt="Hide password">';
       var showIcon = '<img src="images/common/icon_psw_show.svg" alt="Show password">';
 
-      var _loop = function _loop(i) {
+      var _loop3 = function _loop3(i) {
         var input = $(icon[i]).siblings('input');
 
         if (icon[i].dataset.page === 'member') {
@@ -512,7 +525,7 @@
       };
 
       for (var i = 0; i < icon.length; i++) {
-        _loop(i);
+        _loop3(i);
       }
     })();
   }
@@ -520,18 +533,19 @@
   if (getEl('.current-date')) {
     // current date
     var currentDate = getAllEl('.current-date');
-    currentDate.forEach(function (el) {
-      el.value = moment().format('YYYY-MM-DD');
-    });
+
+    for (var i = 0; i < currentDate.length; i++) {
+      currentDate[i].value = moment().format('YYYY-MM-DD');
+    }
   }
 
   if (getEl('.current-time')) {
     // current time
-    var _currentDate = getAllEl('.current-time');
+    var currentTime = getAllEl('.current-time');
 
-    _currentDate.forEach(function (el) {
-      el.value = moment().format('HH:mm');
-    });
+    for (var _i3 = 0; _i3 < currentTime.length; _i3++) {
+      currentTime[_i3].value = moment().format('HH:mm');
+    }
   }
 
   if (getEl('.copy-btn')) {
@@ -599,9 +613,9 @@
       // 假資料陣列
       var result = [];
 
-      for (var i = 0; i < 30; i++) {
+      for (var _i4 = 0; _i4 < 30; _i4++) {
         result.push({
-          name: "ShangHai 00".concat(i),
+          name: "ShangHai 00".concat(_i4),
           img: 'images/slots/test.png'
         });
       }
@@ -634,11 +648,11 @@
         startPageNumber = 1;
         endPageNumber = totalPage;
 
-        for (var i = startPageNumber; i <= endPageNumber; i++) {
-          if (i === page) {
-            pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(i, "\">").concat(i, "</a></li>");
+        for (var _i5 = startPageNumber; _i5 <= endPageNumber; _i5++) {
+          if (_i5 === page) {
+            pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i5, "\">").concat(_i5, "</a></li>");
           } else {
-            pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(i, "\">").concat(i, "</a></li>");
+            pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i5, "\">").concat(_i5, "</a></li>");
           }
         }
       } else if (totalPage > 5) {
@@ -648,11 +662,11 @@
           startPageNumber = 1;
           endPageNumber = 5;
 
-          for (var _i = startPageNumber; _i <= endPageNumber; _i++) {
-            if (_i === page) {
-              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i, "\">").concat(_i, "</a></li>");
+          for (var _i6 = startPageNumber; _i6 <= endPageNumber; _i6++) {
+            if (_i6 === page) {
+              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i6, "\">").concat(_i6, "</a></li>");
             } else {
-              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i, "\">").concat(_i, "</a></li>");
+              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i6, "\">").concat(_i6, "</a></li>");
             }
           }
         } else if (page >= totalPage - 2 && page <= totalPage) {
@@ -660,22 +674,22 @@
           startPageNumber = totalPage - 4;
           endPageNumber = totalPage;
 
-          for (var _i2 = startPageNumber; _i2 <= endPageNumber; _i2++) {
-            if (_i2 === page) {
-              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i2, "\">").concat(_i2, "</a></li>");
+          for (var _i7 = startPageNumber; _i7 <= endPageNumber; _i7++) {
+            if (_i7 === page) {
+              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i7, "\">").concat(_i7, "</a></li>");
             } else {
-              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i2, "\">").concat(_i2, "</a></li>");
+              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i7, "\">").concat(_i7, "</a></li>");
             }
           }
         } else {
           startPageNumber = page - 2;
           endPageNumber = page + 2;
 
-          for (var _i3 = startPageNumber; _i3 <= endPageNumber; _i3++) {
-            if (_i3 === page) {
-              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i3, "\">").concat(_i3, "</a></li>");
+          for (var _i8 = startPageNumber; _i8 <= endPageNumber; _i8++) {
+            if (_i8 === page) {
+              pageString += "<li><a class=\"page-item active\" href=\"#\" data-page=\"".concat(_i8, "\">").concat(_i8, "</a></li>");
             } else {
-              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i3, "\">").concat(_i3, "</a></li>");
+              pageString += "<li><a class=\"page-item\" href=\"#\" data-page=\"".concat(_i8, "\">").concat(_i8, "</a></li>");
             }
           }
         }
@@ -722,8 +736,8 @@
           endIndex = currentPage * pageSize;
         }
 
-        for (var i = startIndex; i < endIndex; i++) {
-          dataString += "\n          <li>\n            <a class=\"slots-container\" href=\"#\">\n              <div class=\"slots-img\">\n                <img src=\"".concat(fakeData()[i].img, "\" alt=\"").concat(fakeData()[i].name, "\"/></div>\n              <div class=\"slots-txt\">\n                <h3>").concat(fakeData()[i].name, "</h3>\n              </div>\n            </a>\n            <button class=\"play-btn\">\n              <span>Play</span>\n              <img src=\"images/common/icon_play.svg\" alt=\"Play\"/>\n            </button>\n          </li>");
+        for (var _i9 = startIndex; _i9 < endIndex; _i9++) {
+          dataString += "\n          <li>\n            <a class=\"slots-container\" href=\"#\">\n              <div class=\"slots-img\">\n                <img src=\"".concat(fakeData()[_i9].img, "\" alt=\"").concat(fakeData()[_i9].name, "\"/></div>\n              <div class=\"slots-txt\">\n                <h3>").concat(fakeData()[_i9].name, "</h3>\n              </div>\n            </a>\n            <button class=\"play-btn\">\n              <span>Play</span>\n              <img src=\"images/common/icon_play.svg\" alt=\"Play\"/>\n            </button>\n          </li>");
         }
       }
 

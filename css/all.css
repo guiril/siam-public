@@ -33,26 +33,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@font-face {
-  font-family: 'Helvetica';
-  src: url("../fonts/Helvetica.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Helvetica Bold';
-  src: url("../fonts/Helvetica_Bold.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Helvetica Oblique';
-  src: url("../fonts/Helvetica_Oblique.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Helvetica Bold Oblique';
-  src: url("../fonts/Helvetica_Bold_Oblique.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'DevanagariSangamMN Bold';
-  src: url("../fonts/DevanagariSangamMN_Bold.ttf") format("truetype"); }
-
 @-webkit-keyframes sk-bouncedelay {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -954,6 +934,7 @@ img {
   height: auto; }
 
 input {
+  font: inherit;
   border: none; }
 
 button {
@@ -967,6 +948,9 @@ body {
   min-width: 1280px;
   font-family: sans-serif;
   background-color: #000000; }
+
+main {
+  display: block; }
 
 .wrapper {
   position: relative;
@@ -1030,11 +1014,11 @@ body {
   .header-time {
     margin-left: 36px; }
     .header-time span {
-      font-size: 12px;
-      font-family: 'Helvetica';
+      font-size: 14px;
+      font-family: "Cabin";
+      font-weight: normal;
       letter-spacing: 0.23px;
-      color: #f8f8f8;
-      opacity: 0.7; }
+      color: rgba(248, 248, 248, 0.7); }
   .header-lang {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1083,13 +1067,15 @@ body {
       width: 100px;
       height: 40px;
       font-size: 15px;
+      font-family: "Mukta";
+      font-weight: 800;
+      letter-spacing: -0.2px;
       border-radius: 6px;
       text-align: center; }
       .header-member-container button.signin-btn {
         position: relative;
         z-index: 1;
         margin-right: 16px;
-        font-family: 'Helvetica';
         color: #f8f8f8;
         border: solid 1.5px #fde174;
         overflow: hidden;
@@ -1111,7 +1097,6 @@ body {
           -webkit-transition: width .4s ease-in-out, height .4s ease-in-out;
           transition: width .4s ease-in-out, height .4s ease-in-out; }
         .header-member-container button.signin-btn:hover {
-          font-family: 'Helvetica Bold';
           color: #1a0128;
           background-color: transparent; }
           .header-member-container button.signin-btn:hover:after {
@@ -1122,8 +1107,6 @@ body {
       .header-member-container button.signup-btn, .header-member-container button.signout-btn {
         position: relative;
         z-index: 1;
-        font-family: 'Helvetica Bold';
-        letter-spacing: -0.2px;
         color: #1a0128;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(77%, #f0ca4c));
         background-image: linear-gradient(#f2f27c, #f0ca4c 77%);
@@ -1192,7 +1175,8 @@ body {
   .header-member .menu-title .text-wrapper {
     position: relative;
     display: inline-block;
-    font-family: 'Helvetica';
+    font-family: "Cabin";
+    font-weight: 500;
     color: rgba(248, 248, 248, 0.9);
     -webkit-transition: all .2s;
     transition: all .2s; }
@@ -1220,9 +1204,11 @@ body {
 .header-member .menu-list,
 .header-member .menu-table {
   position: absolute;
-  top: 34px;
+  top: 32px;
   right: -16px;
   z-index: 1000;
+  font-family: "Cabin";
+  font-weight: normal;
   background-color: rgba(248, 248, 248, 0.96);
   border-radius: 2px; }
 
@@ -1234,18 +1220,17 @@ body {
     display: block;
     padding: 5px 12px;
     font-size: 12px;
-    font-family: 'Helvetica';
+    line-height: 1.17;
     color: rgba(26, 1, 40, 0.8);
     white-space: nowrap;
     -webkit-transition: all .3s;
     transition: all .3s; }
     .header-member .menu-list li a:hover {
-      font-family: 'Helvetica Bold';
+      font-weight: 700;
       background-color: #fde174; }
 
 .header-member .menu-table {
   display: none;
-  font-family: 'DevanagariSangamMN';
   color: #1A0128; }
   .header-member .menu-table th {
     padding-left: 12px;
@@ -1257,7 +1242,8 @@ body {
       opacity: 0.4; }
   .header-member .menu-table thead {
     font-size: 14px;
-    font-family: 'DevanagariSangamMN Bold'; }
+    font-weight: 700;
+    line-height: 1.14; }
     .header-member .menu-table thead tr th,
     .header-member .menu-table thead tr td {
       padding-top: 16px;
@@ -1265,7 +1251,9 @@ body {
   .header-member .menu-table tbody {
     position: relative;
     font-size: 12px;
-    line-height: 1.5; }
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    opacity: .8; }
     .header-member .menu-table tbody:before, .header-member .menu-table tbody:after {
       content: '';
       position: absolute;
@@ -1279,7 +1267,8 @@ body {
       bottom: 34px; }
   .header-member .menu-table tfoot {
     font-size: 14px;
-    font-family: 'DevanagariSangamMN Bold'; }
+    font-weight: 700;
+    line-height: 1.14; }
     .header-member .menu-table tfoot tr th,
     .header-member .menu-table tfoot tr td {
       padding-top: 12px;
@@ -1316,10 +1305,11 @@ body {
   .navbar-list > li > a {
     display: block;
     padding: 0 16px;
-    font-family: "DevanagariSangamMN Bold";
-    font-weight: bold;
+    font-family: "Mukta";
+    font-weight: 600;
     font-size: 20px;
     line-height: 70px;
+    letter-spacing: -0.2px;
     color: rgba(248, 248, 248, 0.9); }
 
 .sub-navbar-container {
@@ -1343,7 +1333,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  font-family: "Cabin";
+  font-weight: 500; }
   .sub-navbar-list.flex-center {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1367,8 +1359,8 @@ body {
         -webkit-box-shadow: inset 5px 5px 8px 0 rgba(0, 0, 0, 0.4);
                 box-shadow: inset 5px 5px 8px 0 rgba(0, 0, 0, 0.4); }
         .sub-navbar-list li a:hover .subnav-name {
-          font-family: "Helvetica Bold";
-          font-weight: bold;
+          font-size: 15px;
+          font-weight: 700;
           color: #1a0128;
           background-color: transparent;
           -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.4);
@@ -1388,9 +1380,7 @@ body {
       height: 34px;
       margin: 12px auto 0;
       font-size: 14px;
-      font-family: 'Helvetica';
       line-height: 34px;
-      letter-spacing: -0.2px;
       text-align: center;
       color: rgba(253, 225, 116, 0.9);
       border: solid 1px #fde174;
@@ -1440,6 +1430,8 @@ body {
           align-items: center; }
   .pagination-list li {
     margin-right: 10px;
+    font-family: "Cabin";
+    font-weight: normal;
     text-align: center; }
     .pagination-list li:last-child {
       margin-right: 0; }
@@ -1447,18 +1439,17 @@ body {
       display: block;
       height: 36px;
       font-size: 16px;
-      font-family: 'Helvetica';
       line-height: 36px;
       color: rgba(248, 248, 248, 0.8);
       border: solid 1.1px rgba(248, 248, 248, 0.8);
       border-radius: 4px; }
-      .pagination-list li a:hover {
+      .pagination-list li a:not(.disabled):hover {
+        font-weight: 700;
         color: #0a0215;
         background-color: #f8f8f8; }
       .pagination-list li a.active {
         font-size: 18px;
-        font-family: "Helvetica Bold";
-        font-weight: bold;
+        font-weight: 700;
         color: #1a0128;
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(77%, #f0ca4c), to(#f2f27c));
         background-image: linear-gradient(to top, #f0ca4c 77%, #f2f27c);
@@ -1481,15 +1472,17 @@ body {
 
 .footer {
   padding: 80px 41px;
-  font-family: 'Helvetica';
+  font-family: "Cabin";
+  font-weight: normal;
   color: #f8f8f8;
   background-color: #000000; }
   .footer-bank {
     margin-top: 73px; }
     .footer-bank h4 {
       margin-bottom: 20px;
-      font-size: 16px;
-      font-family: 'Helvetica Bold';
+      font-size: 18px;
+      font-family: "Mukta";
+      font-weight: 700;
       color: #fde174;
       opacity: 0.9; }
     .footer-bank img {
@@ -1516,6 +1509,7 @@ body {
   .footer-copyright {
     margin-top: 31px;
     font-size: 14px;
+    line-height: 1.14;
     text-align: center;
     opacity: 0.4; }
 
@@ -1531,19 +1525,21 @@ body {
           align-items: flex-start; }
   .footer-nav h4 {
     padding-top: 5px;
-    font-size: 16px;
-    font-family: 'Helvetica Bold';
-    opacity: 0.7; }
+    font-size: 18px;
+    font-family: "Mukta";
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: -0.2px;
+    opacity: 0.8; }
   .footer-nav .link-list {
     margin-top: 14px; }
     .footer-nav .link-list li a {
       display: block;
-      padding: 4px 0;
-      font-size: 14px;
-      font-family: 'Helvetica';
-      letter-spacing: 0.2px;
+      padding: 2px 0;
+      font-size: 16px;
+      line-height: 1.13;
       color: #f8f8f8;
-      opacity: 0.4;
+      opacity: 0.3;
       -webkit-transition: all .2s;
       transition: all .2s; }
       .footer-nav .link-list li a:hover {
@@ -1586,8 +1582,8 @@ body {
     .footer-nav-logo .footer-content {
       margin-top: 15px;
       font-size: 14px;
-      font-family: 'Helvetica';
-      line-height: 1.29;
+      line-height: 1.14;
+      letter-spacing: 0.2px;
       opacity: 0.4; }
       .footer-nav-logo .footer-content p:not(:first-child) {
         margin-top: 16px; }
@@ -1609,7 +1605,7 @@ body {
       opacity: 0.3; }
 
 .guide-link-wrapper {
-  height: 80px;
+  height: 65px;
   background-color: rgba(22, 9, 50, 0.2); }
   .guide-link-wrapper.member-page {
     position: relative; }
@@ -1636,10 +1632,12 @@ body {
             align-items: center; }
     .guide-link-wrapper .guide-link li a {
       display: block;
-      padding: 33px 45px;
-      font-size: 14px;
-      font-family: 'Helvetica Bold';
-      font-style: oblique;
+      padding: 0 45px;
+      font-size: 16px;
+      font-family: "Cabin";
+      font-weight: 700;
+      font-style: italic;
+      line-height: 65px;
       color: rgba(253, 225, 116, 0.8);
       -webkit-transition: all .2s;
       transition: all .2s; }
@@ -1652,7 +1650,7 @@ body {
 
 .article-container {
   position: relative;
-  padding: 44px 28px 41px;
+  padding: 37px 38px 42px;
   margin-bottom: 100px;
   border-radius: 8px; }
   .article-container:after {
@@ -1673,38 +1671,37 @@ body {
   .article-container .article-headline {
     position: relative;
     z-index: 2;
-    font-size: 36px;
-    font-family: "Helvetica Bold Oblique";
-    font-weight: bold;
-    font-style: oblique;
+    font-size: 38px;
+    font-family: "Cabin";
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: -0.2px;
     color: #fde174; }
   .article-container .article-subheading {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 16px;
-    font-family: "Helvetica Bold Oblique";
-    font-weight: bold;
-    font-style: oblique;
+    font-family: "Cabin";
+    font-weight: 500;
+    font-style: italic;
     color: rgba(248, 248, 248, 0.9); }
   .article-container .article-subtitle {
     margin-top: 45px;
     margin-bottom: 12px;
     font-size: 16px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-family: "Cabin";
+    font-weight: 700;
     color: #fde174; }
   .article-container .article-content {
     position: relative;
     z-index: 2;
-    margin-top: 19px;
+    margin-top: 15px;
     font-size: 14px;
-    font-family: "Helvetica";
+    font-family: "Cabin";
     font-weight: normal;
     line-height: 1.57;
     letter-spacing: -0.2px;
     color: rgba(248, 248, 248, 0.9); }
-    .article-container .article-content p {
-      padding-top: 8px;
-      padding-bottom: 8px; }
     .article-container .article-content .article-list {
       margin-left: 16px;
       list-style: decimal; }
@@ -1741,6 +1738,10 @@ body {
     .spinner-container .spinner:nth-child {
       -webkit-animation-delay: -0.16s;
               animation-delay: -0.16s; }
+
+.tooltip {
+  font-family: "Cabin";
+  font-weight: normal; }
 
 /* layout end */
 /* aside item style */
@@ -1794,9 +1795,9 @@ body {
       display: block;
       width: 36px;
       margin-top: 8px;
-      font-size: 22px;
-      font-family: "Helvetica Bold";
-      font-weight: bold;
+      font-size: 24px;
+      font-family: "Mukta";
+      font-weight: 700;
       line-height: 36px;
       letter-spacing: -0.2px;
       -webkit-writing-mode: vertical-rl;
@@ -1842,7 +1843,10 @@ body {
   .aside-line .aside-line-main {
     display: block;
     width: 112px;
-    height: 170px; }
+    height: 170px;
+    font-family: "Mukta";
+    font-weight: 700;
+    letter-spacing: -0.2px; }
     .aside-line .aside-line-main .line-bg {
       position: relative;
       width: 100%;
@@ -1860,10 +1864,8 @@ body {
       position: absolute;
       top: 7px;
       left: 50%;
-      font-size: 24px;
-      font-family: "Helvetica Bold";
-      font-weight: bold;
-      letter-spacing: -0.2px;
+      font-size: 28px;
+      line-height: 1.07;
       color: #1a0128;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); }
@@ -1876,9 +1878,8 @@ body {
       position: absolute;
       bottom: 3px;
       left: 50%;
-      font-size: 16px;
-      font-family: "Helvetica Bold";
-      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.11;
       color: #1a0128;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); }
@@ -1948,7 +1949,7 @@ body {
   max-width: 433px; }
 
 .member-modal .modal-content {
-  padding: 93px 50px 21px;
+  padding: 93px 50px 28px;
   color: #f8f8f8;
   background-color: #100223;
   -webkit-box-shadow: 8px 6px 12px 0 rgba(0, 0, 0, 0.4);
@@ -1966,35 +1967,40 @@ body {
     opacity: .8; }
 
 .member-modal .modal-header .modal-title {
-  font-size: 22px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
+  font-size: 24px;
+  font-family: "Mukta";
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: 0.2px;
   text-align: center;
   color: #fde174; }
 
 .member-modal .modal-header .modal-description {
-  font-size: 16px;
-  font-family: "Catamaran";
+  margin-top: 2px;
+  font-size: 14px;
+  font-family: "Cabin";
   font-weight: 500;
-  line-height: 1.64;
+  line-height: 1.14;
   opacity: 0.8; }
 
 .member-modal .modal-body {
-  margin-top: 25px; }
+  margin-top: 30px; }
 
 .member-modal .modal-footer {
   height: 15px;
-  font-size: 10px;
-  font-family: 'Helvetica';
-  line-height: 1.2;
+  font-size: 12px;
+  font-family: "Cabin";
+  font-weight: normal;
+  line-height: 1.5;
   text-align: center;
   color: rgba(248, 248, 248, 0.9); }
   .member-modal .modal-footer .change-btn {
     position: relative;
     margin-left: 2px;
-    font-size: 12px;
-    font-family: "Helvetica Bold Oblique";
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.2px;
     color: #fde174;
     overflow: hidden; }
     .member-modal .modal-footer .change-btn:after {
@@ -2033,40 +2039,11 @@ body {
 .social-login-container {
   padding-bottom: 39px;
   margin-top: 60px; }
-  .social-login-container-head {
-    width: 100%;
-    position: relative;
-    text-align: center; }
-    .social-login-container-head:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 1px;
-      position: absolute;
-      top: calc((100% - 1px) / 2);
-      right: 0;
-      left: 0;
-      z-index: 0;
-      background-color: #f8f8f8;
-      border-radius: 100px; }
-    .social-login-container-head h4 {
-      display: inline-block;
-      vertical-align: 2px;
-      position: relative;
-      z-index: 1;
-      padding-right: 17px;
-      padding-left: 17px;
-      font-size: 12px;
-      font-family: 'Helvetica';
-      color: rgba(248, 248, 248, 0.6);
-      background-color: #100223; }
-
-.social-login-container {
-  padding-bottom: 39px;
-  margin-top: 60px; }
   .social-login-container .social-login-head {
     width: 100%;
     position: relative;
+    font-family: "Cabin";
+    font-weight: normal;
     text-align: center; }
     .social-login-container .social-login-head:after {
       content: '';
@@ -2078,7 +2055,7 @@ body {
       right: 0;
       left: 0;
       z-index: 0;
-      background-color: #f8f8f8;
+      background-color: rgba(248, 248, 248, 0.18);
       border-radius: 100px; }
     .social-login-container .social-login-head h4 {
       display: inline-block;
@@ -2088,11 +2065,14 @@ body {
       padding-right: 17px;
       padding-left: 17px;
       font-size: 12px;
-      font-family: 'Helvetica';
+      line-height: 1.33;
       color: rgba(248, 248, 248, 0.6);
       background-color: #100223; }
   .social-login-container .social-login {
-    margin-top: 26px; }
+    margin-top: 26px;
+    font-size: 18px;
+    font-family: "Mukta";
+    font-weight: 700; }
     .social-login-container .social-login li {
       width: 332px;
       height: 48px;
@@ -2117,9 +2097,6 @@ body {
             -ms-flex-align: center;
                 align-items: center;
         padding-left: 52px;
-        font-size: 16px;
-        font-family: "Helvetica Bold";
-        font-weight: bold;
         color: #f8f8f8; }
         .social-login-container .social-login li a img {
           margin-right: 18px; }
@@ -2150,37 +2127,36 @@ body {
       opacity: .8; }
 
 #modalPromotion .modal-body {
-  padding: 22px 30px 20px;
+  padding: 25px 30px 20px;
   background-color: rgba(248, 248, 248, 0.96);
   -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.4);
           box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.4); }
 
 #modalPromotion .promotion-title {
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   font-size: 26px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
-  letter-spacing: -0.22px;
+  font-family: "Mukta";
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.2px;
   color: #250751; }
 
 #modalPromotion .promotion-subtitle {
-  margin-top: 17px;
+  margin-top: 23px;
   font-size: 18px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
-  line-height: 0.83;
+  font-family: "Mukta";
+  font-weight: 700;
+  line-height: 1.11;
   letter-spacing: -0.2px;
   color: #250751; }
 
 #modalPromotion .promotion-text {
-  margin-top: 8px;
+  margin-top: 3px;
   font-size: 16px;
-  font-family: 'Catamaran';
-  letter-spacing: 0.2px;
-  line-height: 1.38;
-  color: #212121; }
-  #modalPromotion .promotion-text .bold-text {
-    font-weight: 500; }
+  font-family: "Cabin";
+  font-weight: normal;
+  line-height: 1.14;
+  color: rgba(33, 33, 33, 0.8); }
 
 #modalPromotion .promotion-text-list {
   margin-left: 40px;
@@ -2193,10 +2169,11 @@ body {
   display: block;
   width: 180px;
   height: 40px;
+  margin-top: 80px;
   margin-left: auto;
   font-size: 16px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
+  font-family: "Mukta";
+  font-weight: 700;
   letter-spacing: -0.2px;
   color: #1a0128;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(23%, #f0ca4c), to(#f2f27c));
@@ -2242,18 +2219,19 @@ body {
 
 .download-modal .modal-header .modal-title {
   font-size: 40px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
-  line-height: 1;
+  font-family: "Cabin";
+  font-weight: 700;
+  line-height: 1.1;
   text-align: center;
   color: #0f0323; }
 
 .download-modal .modal-header .modal-description {
-  margin-top: 8px;
-  font-size: 18px;
-  font-family: "Helvetica";
+  margin-top: 11px;
+  font-size: 16px;
+  font-family: "Cabin";
   font-weight: normal;
-  letter-spacing: -0.4px;
+  line-height: 1.13;
+  letter-spacing: -0.2px;
   color: #0f0323; }
 
 .download-modal .download-menu {
@@ -2277,9 +2255,8 @@ body {
       width: 100%;
       height: 50px;
       font-size: 22px;
-      font-family: "Helvetica Bold";
-      font-weight: bold;
-      letter-spacing: -0.2px;
+      font-family: "Cabin";
+      font-weight: 700;
       line-height: 50px;
       text-align: center;
       color: #1a0128;
@@ -2470,7 +2447,8 @@ body {
 .popover {
   padding: 5px 15px;
   font-size: 14px;
-  font-weight: 500;
+  font-family: "Cabin";
+  font-weight: 600;
   background-color: rgba(248, 248, 248, 0.9);
   border: solid 1px #1a0128;
   border-radius: 8px; }
@@ -2504,7 +2482,9 @@ body {
     content: ""; }
   .modal-form-wrapper .form-group {
     position: relative;
-    margin-top: 18px; }
+    margin-top: 16px;
+    font-family: "Cabin";
+    font-weight: normal; }
     .modal-form-wrapper .form-group:first-child {
       margin-top: 0; }
     .modal-form-wrapper .form-group.required {
@@ -2518,16 +2498,12 @@ body {
         top: 18px;
         left: -18px;
         font-size: 26px;
-        font-family: "Catamaran";
-        font-weight: 500;
         color: #b01015; }
     .modal-form-wrapper .form-group input {
       width: 332px;
       height: 46px;
       padding: 12px 19px 12px 66px;
       font-size: 15px;
-      font-family: "Catamaran";
-      font-weight: 600;
       color: rgba(248, 248, 248, 0.9);
       background-color: transparent;
       border-radius: 25px;
@@ -2602,17 +2578,16 @@ body {
       margin-right: 6px; }
     .modal-form-wrapper .form-feedback .feedback-msg {
       display: inline-block;
-      font-size: 14px;
-      font-family: "Catamaran";
-      font-weight: 500; }
+      font-size: 14px; }
   .modal-form-wrapper .forgot-btn {
     position: relative;
     float: right;
     display: block;
     margin-top: 15px;
     font-size: 14px;
-    font-family: "Catamaran";
-    font-weight: 500;
+    font-family: "Cabin";
+    font-weight: 600;
+    line-height: 1.14;
     color: rgba(248, 248, 248, 0.8); }
     .modal-form-wrapper .forgot-btn:after {
       content: '';
@@ -2637,9 +2612,11 @@ body {
     width: 100%;
     padding: 14px 0;
     margin-top: 50px;
-    font-size: 20px;
-    font-family: 'Helvetica Bold';
-    line-height: 1.1;
+    font-size: 22px;
+    font-family: "Mukta";
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.2px;
     color: #191919;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(77%, #f0ca4c));
     background-image: linear-gradient(#f2f27c, #f0ca4c 77%);
@@ -2929,9 +2906,10 @@ body {
     min-width: 80px;
     height: 34px;
     margin-left: 10px;
-    font-size: 14px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-size: 16px;
+    font-family: "Mukta";
+    font-weight: 700;
+    letter-spacing: -0.2px;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(79%, #f0ca4c));
     background-image: linear-gradient(#f2f27c, #f0ca4c 79%);
     border-radius: 6px;
@@ -2944,10 +2922,10 @@ body {
     height: 40px;
     margin-top: 15px;
     margin-left: 173px;
-    font-size: 16px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
-    line-height: 1.13;
+    font-size: 18px;
+    font-family: "Mukta";
+    font-weight: 700;
+    letter-spacing: -0.2px;
     color: #1a0128;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(79%, #f0ca4c));
     background-image: linear-gradient(#f2f27c, #f0ca4c 79%);
@@ -3048,8 +3026,9 @@ body {
       display: inline-block;
       padding: 5px;
       font-size: 14px;
-      font-family: 'Helvetica';
-      letter-spacing: -0.2px;
+      font-family: "Cabin";
+      font-weight: normal;
+      letter-spacing: 0.2px;
       color: rgba(248, 248, 248, 0.6); }
 
 .home-container {
@@ -3106,12 +3085,11 @@ body {
         transition: all .4s; }
       .home-row .home-col .home-col-entrance .home-col-entrance-link p {
         width: 380px;
-        margin: 190px auto 21px;
+        margin: 190px auto 20px;
         font-size: 20px;
-        font-family: "DevanagariSangamMN Bold";
-        font-weight: bold;
-        line-height: 1.09;
-        letter-spacing: 0.4px;
+        font-family: "Cabin";
+        font-weight: 500;
+        line-height: 1.18;
         text-align: center;
         color: rgba(248, 248, 248, 0.8); }
       .home-row .home-col .home-col-entrance .home-col-entrance-link .play-btn {
@@ -3122,8 +3100,8 @@ body {
         height: 40px;
         margin: 0 auto;
         font-size: 16px;
-        font-family: "Helvetica Bold";
-        font-weight: bold;
+        font-family: "Cabin";
+        font-weight: 700;
         color: #fde174;
         border: solid 2px #fde174;
         border-radius: 20px;
@@ -3169,8 +3147,11 @@ body {
     width: 450px;
     height: 80px;
     margin: 32px auto 0;
-    font-size: 24px;
-    font-family: 'Helvetica Bold';
+    font-size: 28px;
+    font-family: "Mukta";
+    font-weight: 800;
+    line-height: 1.07;
+    letter-spacing: -0.2px;
     color: #fde174;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #230236), to(#160221));
     background-image: linear-gradient(to bottom, #230236 5%, #160221);
@@ -3188,14 +3169,20 @@ body {
   text-align: center; }
   .home-title .headline {
     font-size: 26px;
-    font-family: 'Helvetica Bold';
+    font-family: "Mukta";
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: -0.2px;
     color: #fde174; }
   .home-title .subtitle {
     margin-top: 12px;
     font-size: 14px;
-    font-family: 'Helvetica Oblique';
+    font-family: "Cabin";
+    font-weight: 700;
+    font-style: italic;
     line-height: 1.14;
-    color: rgba(248, 248, 248, 0.6); }
+    letter-spacing: 0.2px;
+    color: rgba(248, 248, 248, 0.8); }
 
 .headline-container {
   position: relative; }
@@ -3218,9 +3205,8 @@ body {
 
 .home-step-title .subtitle {
   margin-top: 8px;
-  font-family: 'Helvetica'; }
-  .home-step-title .subtitle .bold-text {
-    font-family: 'Helvetica Bold'; }
+  font-weight: 600;
+  font-style: normal; }
 
 .home-bottom-title {
   width: 100%; }
@@ -3236,7 +3222,9 @@ body {
     z-index: 1;
     width: 100%;
     height: 80px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-family: "Cabin";
+    font-weight: normal; }
     .step-list li:after {
       content: '';
       position: absolute;
@@ -3273,14 +3261,17 @@ body {
       min-width: 24px;
       margin-right: 22px;
       font-size: 40px;
-      font-family: 'Helvetica Bold Oblique';
+      font-style: italic;
       color: #fde174; }
     .step-list li .step-title {
       width: 110px;
       min-width: 110px;
       font-size: 24px;
-      font-family: 'Helvetica Bold Oblique';
-      color: rgba(248, 248, 248, 0.8); }
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      color: #f8f8f8; }
     .step-list li .step-arrow {
       height: 31px;
       -webkit-transition: all .5s;
@@ -3288,9 +3279,7 @@ body {
     .step-list li .step-txt {
       margin-left: 24px;
       font-size: 16px;
-      font-family: "Helvetica";
-      font-weight: normal;
-      line-height: 1.2;
+      line-height: 1.13;
       color: rgba(248, 248, 248, 0.8); }
     .step-list li:hover .step-arrow {
       -webkit-animation: shake .8s infinite;
@@ -3365,15 +3354,19 @@ body {
     margin-top: 29px; }
     .casino-list li .casino-txt h3 {
       margin-bottom: 6px;
-      font-family: 'Helvetica Bold';
       font-size: 26px;
+      font-family: "Mukta";
+      font-weight: 700;
+      line-height: 1.08;
       color: #fde174; }
     .casino-list li .casino-txt p {
       font-size: 16px;
-      font-family: 'Helvetica Oblique';
-      line-height: 1.2;
-      letter-spacing: 0.18px;
-      color: rgba(248, 248, 248, 0.7); }
+      font-family: "Cabin";
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.13;
+      letter-spacing: 0.2px;
+      color: rgba(248, 248, 248, 0.8); }
     .casino-list li .casino-txt .play-btn {
       position: relative;
       z-index: 1;
@@ -3381,7 +3374,9 @@ body {
       height: 40px;
       margin-top: 21px;
       font-size: 16px;
-      font-family: 'Helvetica Bold';
+      font-family: "Mukta";
+      font-weight: 800;
+      letter-spacing: -0.2px;
       color: #1a0128;
       background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(77%, #f0ca4c));
       background-image: linear-gradient(#f2f27c, #f0ca4c 77%);
@@ -3425,7 +3420,10 @@ body {
         display: block; }
     .slots-wrapper .slots-title h2 {
       font-size: 20px;
-      font-family: 'Helvetica Bold Oblique';
+      font-family: "Cabin";
+      font-weight: 600;
+      font-style: italic;
+      line-height: 1.1;
       letter-spacing: -0.2px;
       color: #f8f8f8; }
   .slots-wrapper .slots-list {
@@ -3469,8 +3467,7 @@ body {
         .slots-wrapper .slots-list li:hover .slots-img:after {
           opacity: 1; }
         .slots-wrapper .slots-list li:hover .slots-txt {
-          font-family: "Helvetica Bold";
-          font-weight: bold;
+          font-weight: 600;
           color: #fde174; }
         .slots-wrapper .slots-list li:hover .play-btn {
           -webkit-transform: translateY(0);
@@ -3522,8 +3519,9 @@ body {
         margin-top: 7px;
         margin-bottom: 9px;
         font-size: 12px;
-        font-family: 'Helvetica';
-        letter-spacing: -0.2px;
+        font-family: "Cabin";
+        font-weight: normal;
+        line-height: 1.17;
         text-align: center;
         color: rgba(248, 248, 248, 0.9);
         -webkit-transition: all .3s;
@@ -3536,9 +3534,9 @@ body {
         width: 100px;
         height: 36px;
         font-size: 14px;
-        font-family: "Helvetica Bold Oblique";
-        font-weight: bold;
-        font-style: oblique;
+        font-family: "Cabin";
+        font-weight: 500;
+        font-style: italic;
         line-height: 1.13;
         color: #fde174;
         border: solid 2px rgba(253, 225, 116, 0.9);
@@ -3589,36 +3587,43 @@ body {
             align-items: center; }
     .jackpot-wrapper .jackpot-container .jackpot-title {
       margin-right: 22px;
-      font-size: 32px;
-      font-family: 'Helvetica Bold Oblique';
+      font-size: 36px;
+      font-family: "Mukta";
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: 0.2px;
       text-align: center;
-      background-image: -webkit-gradient(linear, left bottom, left top, from(#cccccc), color-stop(36%, #f0f0f0), color-stop(0%, #ffffff), color-stop(0%, #fbfbfa), color-stop(0%, #f0eeeb));
-      background-image: linear-gradient(to top, #cccccc, #f0f0f0 36%, #ffffff 0%, #fbfbfa 0%, #f0eeeb 0%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; }
+      color: #f8f8f8; }
       .jackpot-wrapper .jackpot-container .jackpot-title span {
         display: block;
         width: 130px; }
       .jackpot-wrapper .jackpot-container .jackpot-title .sm-text {
         margin-top: 4px;
-        font-size: 18px; }
+        font-size: 16px;
+        font-family: "Cabin";
+        font-weight: 600;
+        font-style: italic;
+        line-height: 1.13;
+        letter-spacing: 0.2px;
+        opacity: .8; }
     .jackpot-wrapper .jackpot-container .jackpot-prize {
       padding: 20px;
+      font-family: "Cabin";
+      font-weight: normal;
+      font-style: italic;
       background-color: #0a0215;
       border-radius: 10px; }
       .jackpot-wrapper .jackpot-container .jackpot-prize-currency {
         margin-right: 20px;
         font-size: 24px;
-        font-family: 'Helvetica Oblique';
-        line-height: 1.25;
-        letter-spacing: -0.12px;
-        color: rgba(248, 248, 248, 0.9); }
+        line-height: 1.08;
+        letter-spacing: -0.2px;
+        color: #f8f8f8; }
       .jackpot-wrapper .jackpot-container .jackpot-prize-num {
         display: inline-block;
         width: 314px;
         font-size: 44px;
-        font-family: 'Helvetica Bold Oblique';
+        font-weight: 700;
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(38%, #f0ca4c), color-stop(77%, #f2f27c), to(#f1cc50));
         background-image: linear-gradient(to top, #f0ca4c 38%, #f2f27c 77%, #f1cc50);
         background-clip: text;
@@ -3679,10 +3684,9 @@ body {
           width: 120px;
           height: 43px;
           font-size: 18px;
-          font-family: "Helvetica Bold Oblique";
-          font-weight: bold;
-          font-style: oblique;
-          line-height: 1.13;
+          font-family: "Cabin";
+          font-weight: 500;
+          font-style: italic;
           color: #fde174;
           border: solid 2px rgba(253, 225, 116, 0.9);
           border-radius: 20px;
@@ -3757,14 +3761,18 @@ body {
     margin-right: 38px; }
   .home-bottom-row .home-bottom-col h3 {
     font-size: 28px;
-    font-family: 'Helvetica Bold';
-    line-height: 1.2;
+    font-family: "Mukta";
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: -0.2px;
     color: #fde174; }
   .home-bottom-row .home-bottom-col p {
     margin-top: 7px;
     font-size: 16px;
-    font-family: 'Helvetica';
-    line-height: 1.2;
+    font-family: "Cabin";
+    font-weight: normal;
+    line-height: 1.13;
+    letter-spacing: 0.2px;
     color: rgba(248, 248, 248, 0.8); }
   .home-bottom-row .home-bottom-col .sm-card:first-child {
     margin-bottom: 40px; }
@@ -4075,12 +4083,12 @@ body {
           box-shadow: 2px 2px 6px 0 rgba(25, 25, 25, 0.24), 0 -1px 2px 0 rgba(25, 25, 25, 0.1); }
   .promotions-menu li a {
     display: block;
-    width: 131px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    width: 129px;
+    height: 60px;
+    line-height: 60px;
     font-size: 18px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-family: "Mukta";
+    font-weight: 600;
     text-align: center;
     color: rgba(248, 248, 248, 0.9);
     border-bottom: 2px solid transparent;
@@ -4088,7 +4096,8 @@ body {
     transition: all .2s; }
     .promotions-menu li a:hover, .promotions-menu li a.active {
       color: #fde174;
-      border-color: #fde174; }
+      border-color: #fde174;
+      font-weight: 700; }
 
 .promotions-card-list {
   margin-top: 48px;
@@ -4124,12 +4133,14 @@ body {
         -webkit-transition: all .3s;
         transition: all .3s; }
     .promotions-card-list li .card-title {
-      margin-top: 13px;
-      margin-left: 15px; }
+      margin-top: 18px;
+      margin-left: 20px; }
       .promotions-card-list li .card-title h3 {
         font-size: 20px;
-        font-family: "Catamaran";
+        font-family: "Mukta";
         font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.2px;
         color: #fde174; }
     .promotions-card-list li .card-btn {
       padding-right: 15px;
@@ -4150,11 +4161,12 @@ body {
         width: 180px;
         height: 40px;
         font-size: 16px;
+        font-family: "Mukta";
+        font-weight: 700;
         border-radius: 6px; }
       .promotions-card-list li .card-btn .details-btn {
         position: relative;
         z-index: 1;
-        font-family: 'Helvetica';
         color: rgba(248, 248, 248, 0.8);
         border: solid 1px rgba(248, 248, 248, 0.8);
         overflow: hidden;
@@ -4184,8 +4196,6 @@ body {
       .promotions-card-list li .card-btn .join-btn {
         position: relative;
         z-index: 1;
-        font-family: "Helvetica Bold";
-        font-weight: bold;
         letter-spacing: -0.2px;
         color: #1a0128;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f27c), color-stop(79%, #f0ca4c));
@@ -4218,8 +4228,8 @@ body {
   .promotions-none p {
     margin-top: 25px;
     font-size: 16px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-family: "Mukta";
+    font-weight: 700;
     color: rgba(248, 248, 248, 0.8); }
 
 /* promotions page style end */
@@ -4263,17 +4273,17 @@ body {
       padding: 24px 20px; }
       .card-list li .card-txt h3 {
         font-size: 28px;
-        font-family: "Helvetica Bold";
-        font-weight: bold;
+        font-family: "Mukta";
+        font-weight: ˙700;
+        line-height: 1.07;
         letter-spacing: 0.2px;
         color: #fde174; }
       .card-list li .card-txt p {
-        margin-top: 13px;
+        margin-top: 9px;
         font-size: 16px;
-        font-family: "Helvetica";
+        font-family: "Cabin";
         font-weight: normal;
         line-height: 1.13;
-        letter-spacing: normal;
         color: rgba(248, 248, 248, 0.8); }
 
 /* card style end */
@@ -4282,7 +4292,7 @@ body {
   position: relative;
   height: 66px;
   padding-left: 32px;
-  padding-right: 40px;
+  padding-right: 47px;
   margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4315,10 +4325,10 @@ body {
   display: block;
   width: 280px;
   height: 42px;
-  font-size: 18px;
-  font-family: "Helvetica Bold";
-  font-weight: bold;
-  line-height: 1.11;
+  font-size: 20px;
+  font-family: "Mukta";
+  font-weight: 600;
+  line-height: 1.13;
   letter-spacing: -0.2px;
   text-indent: 18px;
   color: #fde174;
@@ -4339,10 +4349,12 @@ body {
           justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  font-family: "Cabin";
+  font-weight: normal; }
   .slots-category li {
     height: 100%;
-    margin-right: 34px; }
+    margin-right: 38px; }
     .slots-category li:last-child {
       margin-right: 0; }
     .slots-category li a {
@@ -4364,8 +4376,8 @@ body {
         display: inline-block;
         vertical-align: bottom;
         font-size: 16px;
-        font-family: 'Helvetica';
-        line-height: 1.13; }
+        line-height: 1.13;
+        letter-spacing: -0.2px; }
       .slots-category li a:hover {
         -webkit-transition: all .2s;
         transition: all .2s; }
@@ -4415,8 +4427,7 @@ body {
     .slots-games li:hover .slots-img:after {
       opacity: 1; }
     .slots-games li:hover .slots-txt {
-      font-family: "Helvetica Bold";
-      font-weight: bold;
+      font-weight: 600;
       color: #fde174; }
     .slots-games li:hover .play-btn {
       -webkit-transform: translateY(0);
@@ -4454,8 +4465,9 @@ body {
       margin-top: 9px;
       margin-bottom: 15px;
       font-size: 14px;
-      font-family: 'Helvetica';
-      letter-spacing: -0.2px;
+      font-family: "Cabin";
+      font-weight: normal;
+      line-height: 1.14;
       text-align: center;
       color: rgba(248, 248, 248, 0.9);
       -webkit-transition: all .3s;
@@ -4468,8 +4480,8 @@ body {
       width: 100px;
       height: 36px;
       font-size: 14px;
-      font-family: "Helvetica Bold Oblique";
-      font-weight: bold;
+      font-family: "Cabin";
+      font-weight: 500;
       font-style: oblique;
       line-height: 1.13;
       color: #fde174;
@@ -4506,8 +4518,8 @@ body {
   .no-data p {
     margin-top: 25px;
     font-size: 16px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-family: "Mukta";
+    font-weight: 700;
     color: rgba(248, 248, 248, 0.8); }
 
 /* slots games page style end */
@@ -4540,27 +4552,29 @@ body {
     width: 610px; }
     .content-row .content-txt h3 {
       font-size: 30px;
-      font-family: "Helvetica Bold";
-      font-weight: bold;
-      line-height: 1.07;
+      font-family: "Mukta";
+      font-weight: 700;
+      line-height: 1.67;
       color: #fde174; }
     .content-row .content-txt p {
       width: 388px;
       margin-top: 6px;
       font-size: 14px;
-      font-family: "Helvetica";
+      font-family: "Cabin";
       font-weight: normal;
-      line-height: 1.07;
+      line-height: 1.14;
+      letter-spacing: 0.2px;
       color: rgba(248, 248, 248, 0.8); }
   .content-row .play-btn {
     position: relative;
     z-index: 1;
     width: 160px;
     height: 42px;
-    margin-top: 37px;
+    margin-top: 32px;
     font-size: 16px;
-    font-family: "Helvetica Bold";
-    font-weight: bold;
+    font-family: "Mukta";
+    font-weight: 700;
+    letter-spacing: -0.2px;
     color: #fde174;
     border: solid 2px #fde174;
     border-radius: 20px;
